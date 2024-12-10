@@ -53,7 +53,6 @@ public class WebTableTest {
 
         WebElement submitField=driver.findElement(By.id("submit"));
         submitField.click();
-
     }
 
 }
