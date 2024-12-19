@@ -22,6 +22,7 @@ public class PracticeFormTest {
         // JavascriptExecutor js =  (JavascriptExecutor) driver;
         // js.executeScript("window.scrollBy(0,400)");
 
+
         WebElement formElement=driver.findElement(By.xpath("//h5[text()='Forms']"));
         formElement.click();
 
