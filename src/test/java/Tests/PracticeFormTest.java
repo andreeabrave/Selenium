@@ -49,5 +49,19 @@ public class PracticeFormTest {
         File file = new File("src/test/resources/TestPicture.jpg");
         pictureField.sendKeys(file.getAbsolutePath());
 
+        WebElement genderFieldMale= driver.findElement(By.xpath("//label[@for='gender-radio-1']"));
+        WebElement genderFieldFemale= driver.findElement(By.xpath("//label[@for='gender-radio-2']"));
+        WebElement genderFieldOther= driver.findElement(By.xpath("//label[@for='gender-radio-3']"));
+        String genderFieldValue="Male";
+        if (genderFieldValue.equals("Male")){
+            genderFieldMale.click();
+        }
+        else if (genderFieldValue.equals("Female")){
+            genderFieldFemale.click();
+        }
+        else if (genderFieldOther.equals("Other")){
+            genderFieldOther.click();
+        }
+
     }
 }
