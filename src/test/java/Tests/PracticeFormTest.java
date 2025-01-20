@@ -53,13 +53,22 @@ public class PracticeFormTest {
         WebElement genderFieldFemale= driver.findElement(By.xpath("//label[@for='gender-radio-2']"));
         WebElement genderFieldOther= driver.findElement(By.xpath("//label[@for='gender-radio-3']"));
         String genderFieldValue="Male";
-        if (genderFieldValue.equals("Male")){
+//        if (genderFieldValue.equals("Male")){
+//            genderFieldMale.click();
+//        }
+//        else if (genderFieldValue.equals("Female")){
+//            genderFieldFemale.click();
+//        }
+//        else if (genderFieldOther.equals("Other")){
+//            genderFieldOther.click();
+//        }
+        if(genderFieldMale.getText().equals(genderFieldValue)){
             genderFieldMale.click();
         }
-        else if (genderFieldValue.equals("Female")){
+        else if(genderFieldFemale.getText().equals(genderFieldValue)){
             genderFieldFemale.click();
         }
-        else if (genderFieldOther.equals("Other")){
+        else if(genderFieldOther.getText().equals(genderFieldValue)){
             genderFieldOther.click();
         }
 
