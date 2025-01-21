@@ -80,6 +80,10 @@ public class PracticeFormTest {
         stateField.sendKeys("NCR");
         stateField.sendKeys(Keys.ENTER);
 
+        WebElement cityField= driver.findElement(By.id("react-select-4-input"));
+        js.executeScript("arguments[0].click();", cityField);
+        cityField.sendKeys("Delhi");
+        cityField.sendKeys(Keys.ENTER);
 
     }
 }
