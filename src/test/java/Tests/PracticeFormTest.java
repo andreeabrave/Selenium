@@ -1,10 +1,8 @@
 package Tests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -18,9 +16,9 @@ public class PracticeFormTest {
         driver.get("https://demoqa.com/");
         driver.manage().window().maximize();
 
-        //pt scroll
-        // JavascriptExecutor js =  (JavascriptExecutor) driver;
-        // js.executeScript("window.scrollBy(0,400)");
+        //PT SCROLL
+         JavascriptExecutor js =  (JavascriptExecutor) driver;
+         js.executeScript("window.scrollBy(0,400)");
 
 
         WebElement formElement=driver.findElement(By.xpath("//h5[text()='Forms']"));
@@ -71,6 +69,17 @@ public class PracticeFormTest {
         else if(genderFieldOther.getText().equals(genderFieldValue)){
             genderFieldOther.click();
         }
+
+        WebElement subjectField=driver.findElement(By.id("subjectsInput"));
+        String subjectValue="Social Studies";
+        subjectField.sendKeys(subjectValue);
+        subjectField.sendKeys(Keys.ENTER);
+
+        WebElement stateField= driver.findElement(By.id("react-select-3-input"));
+        js.executeScript("arguments[0].click();", stateField);
+        stateField.sendKeys("NCR");
+        stateField.sendKeys(Keys.ENTER);
+
 
     }
 }
